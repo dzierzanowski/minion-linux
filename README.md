@@ -2,7 +2,7 @@
 
 Minion is an addon manager for The Elder Scrolls Online.
 
-Website: [https://minion.gg/]
+Website: https://minion.gg/
 
 This is a set of shell scripts and requirements to facilitate running Minion
 on Linux.
@@ -26,5 +26,8 @@ will be highly appreciated.
 You can add `./bin/` to your PATH to be able to run Minion anytime from your terminal.
 
 Sometimes the app prompts you to update and restart, then exits while failing to
-finish the update. Simply run `./fix-update` to fix this.
+finish the update. To fix this, simply run:
+```zsh
+./fix-update
+```
 
