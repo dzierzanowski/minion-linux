@@ -1,0 +1,29 @@
+#!/usr/bin/env zsh
+
+script_dir=${0:A:h}
+pkg_name="Minion3.0.5-java.zip"
+minion_pkg="https://cdn.mmoui.com/minion/v3/${pkg_name}"
+
+if [[ -f ${script_dir}/Minion-jfx.jar ]] || [[ -d ${script_dir}/lib ]]; then
+    echo "Minion appears already installed."
+    echo "Remove lib/ and Minion-jfx.jar to be able to reinstall."
+    exit 0
+fi
+
+cd ${script_dir}
+
+# Remove archive, if exists
+rm -f ${pkg_name}
+
+echo "Downloading Minion..."
+wget ${minion_pkg}
+unzip ${pkg_name}
+
+# Remove archive after installation 
+rm -f ${pkg_name}
+
+echo
+echo "Done!"
+echo "IMPORTANT: Make sure you have Oracle JDK/JRE 8 available under /opt/oracle-jdk-8"
+echo
+echo "To launch, run: ./bin/minion"

@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+script_dir=${0:A:h}
+
+if [[ ! -d ${script_dir}/null ]]; then
+    echo "Minion doesn't appear to be in process of an update."
+    exit 0
+fi
+
+cd ${script_dir}
+
+echo "Finishing update..."
+
+mv null/Minion-jfx.jar .
+rm -r null
+
+echo "Done!"
+

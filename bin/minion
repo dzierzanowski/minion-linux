@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+java8=/opt/oracle-jdk-8/bin/java
+script_dir=${0:A:h}
+
+echo "Loading Minion, window should show in a few seconds."
+
+cd ${script_dir}/../
+${java8} -jar Minion-jfx.jar &>/dev/null &
+
