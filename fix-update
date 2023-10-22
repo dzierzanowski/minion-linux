@@ -12,6 +12,7 @@ cd ${script_dir}
 echo "Finishing update..."
 
 mv null/Minion-jfx.jar .
+mv null/lib/ ./lib/*
 rm -r null
 
 echo "Done!"
